@@ -1,79 +1,294 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akash AK | AWS Cloud Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Akash | AWS Cloud Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
-}
-.container { max-width: 1100px; margin: auto; padding: 30px; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#020617;color:#e2e8f0}
 
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-.profile-pic {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #00d4ff;
-}
-.header-text h1 { font-size: 2.4rem; }
-.header-text p { opacity: 0.9; margin-top: 8px; }
-.badge {
-  display: inline-block;
-  margin-top: 10px;
-  background: #00d4ff;
-  color: #000;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
+/* background glow */
+body::before{
+content:"";
+position:fixed;
+width:900px;height:900px;
+background:radial-gradient(circle,#2563eb55,transparent 60%);
+top:-300px;left:-300px;z-index:-1}
 
-.section {
-  margin-top: 30px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-.section h2 { margin-bottom: 15px; color: #00d4ff; }
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(2,6,23,.7);
+backdrop-filter:blur(12px);
+border-bottom:1px solid #1e293b;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+z-index:999}
 
-.skills { display: flex; flex-wrap: wrap; gap: 10px; }
-.skill {
-  background: rgba(0,212,255,0.15);
-  border: 1px solid #00d4ff;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
+nav h2{color:#3b82f6}
+nav a{margin-left:25px;text-decoration:none;color:#cbd5f5;font-size:.9rem}
+nav a:hover{color:#3b82f6}
 
-.contact a { color: #00d4ff; text-decoration: none; }
-footer { text-align: center; margin: 30px 0; opacity: 0.7; }
+section{padding:120px 8%}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center}
+
+.hero h1{font-size:3.5rem;margin-bottom:10px}
+.hero span{color:#3b82f6}
+.hero p{max-width:650px;color:#94a3b8}
+
+.buttons{margin-top:35px}
+.btn{
+text-decoration:none;
+padding:14px 28px;
+border-radius:40px;
+font-weight:600;
+margin:10px;
+display:inline-block}
+
+.primary{background:#3b82f6;color:white}
+.primary:hover{box-shadow:0 10px 40px #2563eb70}
+
+.outline{border:1px solid #3b82f6;color:#3b82f6}
+.outline:hover{background:#3b82f6;color:white}
+
+h2{font-size:2.2rem;text-align:center;margin-bottom:50px}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px}
+
+.card{
+background:#0f172a;
+border:1px solid #1e293b;
+padding:28px;
+border-radius:18px;
+transition:.3s}
+
+.card:hover{transform:translateY(-8px);border-color:#3b82f6}
+
+.card h3{color:#3b82f6;margin-bottom:10px}
+
+.skills{text-align:center}
+.skills span{
+display:inline-block;
+padding:8px 15px;
+margin:7px;
+border-radius:20px;
+background:#0f172a;
+border:1px solid #1e293b;
+font-size:.85rem}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:25px;
+text-align:center;
+max-width:700px;
+margin:auto}
+
+.stat{
+background:#0f172a;
+padding:25px;
+border-radius:15px;
+border:1px solid #1e293b}
+
+.stat h3{color:#3b82f6;font-size:1.8rem}
+
+.timeline{max-width:800px;margin:auto}
+
+.timeline-item{
+border-left:2px solid #3b82f6;
+padding-left:20px;
+margin-bottom:35px}
+
+.timeline-item h4{color:#3b82f6}
+
+.contact{text-align:center}
+.contact a{display:block;margin:10px;color:#3b82f6;text-decoration:none}
+
+footer{
+text-align:center;
+padding:35px;
+border-top:1px solid #1e293b;
+color:#64748b}
+
+@media(max-width:768px){
+.hero h1{font-size:2.3rem}
+section{padding:100px 6%}}
+
 </style>
 </head>
+
 <body>
 
-<div class="container">
+<nav>
+<h2>Akash</h2>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#journey">Journey</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-  <!-- Header -->
-  <div class="header">
-    <img src="profile.jpeg.jpeg" alt="Akash AK" class="profile-pic">
-    <div class="header-text">
-      <h1>Akash AK</h1>
-      <p>AWS Certified Solutions Architect (SAA) | MCA Graduate | Cloud Engineer Fresher</p>
-      <span class="badge">Open to Cloud / DevOps Roles</span>
+<section class="hero">
+<h1>AWS Cloud Engineer <span>Portfolio 2026</span></h1>
+<p>AWS Certified Solutions Architect Associate | MCA Graduate | Building Scalable Cloud Architectures and Highly Available Systems on AWS.</p>
+
+<div class="buttons">
+<a class="btn primary" href="#projects">View Projects</a>
+<a class="btn outline" href="#contact">Contact Me</a>
+</div>
+</section>
+
+<section>
+<h2>Certification</h2>
+<div style="text-align:center">
+<img src="https://d1.awsstatic.com/certification/badges/AWS-Certified-Solutions-Architect-Associate_badge.684bf0c3c6b3c6b0f1f4c3e6b3f6d0f5a1b8a5f1.png" width="150">
+<p style="margin-top:15px">AWS Certified Solutions Architect – Associate</p>
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<p style="max-width:750px;margin:auto;text-align:center;color:#94a3b8">
+Cloud enthusiast passionate about designing scalable, fault‑tolerant and secure cloud systems using Amazon Web Services. Experienced with EC2, VPC networking, serverless architectures, CI/CD pipelines and monitoring systems.
+</p>
+</section>
+
+<section>
+<h2>Portfolio Stats</h2>
+<div class="stats">
+<div class="stat">
+<h3>8+</h3>
+<p>AWS Projects</p>
+</div>
+<div class="stat">
+<h3>15+</h3>
+<p>AWS Services Used</p>
+</div>
+<div class="stat">
+<h3>1</h3>
+<p>AWS Certification</p>
+</div>
+<div class="stat">
+<h3>100+</h3>
+<p>Interview Questions Practiced</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Core Skills</h2>
+<div class="skills">
+<span>AWS EC2</span>
+<span>S3</span>
+<span>VPC</span>
+<span>IAM</span>
+<span>CloudFront</span>
+<span>Route 53</span>
+<span>Auto Scaling</span>
+<span>Load Balancer</span>
+<span>Lambda</span>
+<span>DynamoDB</span>
+<span>Docker</span>
+<span>Linux</span>
+<span>Git</span>
+<span>Python</span>
+</div>
+</section>
+
+<section id="projects">
+<h2>Featured AWS Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Highly Available Web App</h3>
+<p>Multi AZ architecture using EC2, ALB and Auto Scaling ensuring high availability and fault tolerance.</p>
+</div>
+
+<div class="card">
+<h3>Static Website + CDN</h3>
+<p>Global static website hosted on S3 with CloudFront CDN and Route53 domain configuration.</p>
+</div>
+
+<div class="card">
+<h3>Serverless REST API</h3>
+<p>API Gateway integrated with AWS Lambda and DynamoDB to build scalable serverless backend.</p>
+</div>
+
+<div class="card">
+<h3>Secure VPC Architecture</h3>
+<p>Designed secure network with public/private subnets, NAT Gateway and Bastion host.</p>
+</div>
+
+<div class="card">
+<h3>CI/CD Pipeline</h3>
+<p>Automated application deployment using GitHub, CodePipeline and CodeDeploy.</p>
+</div>
+
+<div class="card">
+<h3>Monitoring System</h3>
+<p>CloudWatch dashboards and alerts integrated with SNS for real‑time monitoring.</p>
+</div>
+
+</div>
+</section>
+
+<section id="journey">
+<h2>Learning Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>MCA Graduation</h4>
+<p>Completed Master of Computer Applications with focus on cloud computing technologies.</p>
+</div>
+
+<div class="timeline-item">
+<h4>AWS Certification</h4>
+<p>Earned AWS Certified Solutions Architect Associate certification.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Cloud Portfolio Projects</h4>
+<p>Built hands-on AWS projects demonstrating architecture design and deployment skills.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+
+<a href="mailto:akashmca29@gmail.com">Email : akashmca29@gmail.com</a>
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+
+<p style="margin-top:15px">Tamil Nadu, India</p>
+
+</section>
+
+<footer>
+© 2026 Akash | Cloud Engineer Portfolio
+</footer>
+
+</body>
+</html>
